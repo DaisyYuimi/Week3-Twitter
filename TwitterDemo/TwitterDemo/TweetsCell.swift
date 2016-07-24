@@ -23,14 +23,18 @@ class TweetsCell: UITableViewCell {
     
     @IBOutlet weak var retweetsCountLabel: UILabel!
     
+    @IBOutlet weak var timestampLabel: UILabel!
     
    // data
     var tweet:Tweet! {
         didSet {
             self.tweetTextLabel.text = self.tweet.text
-            self.likesCountLabel.text = String(self.tweet.favoritesCount)
-            self.retweetsCountLabel.text = String(self.tweet.retweetCount)
-            
+            self.likesCountLabel.text = String(self.tweet.favoritesCount) + " likes"
+            self.retweetsCountLabel.text = String(self.tweet.retweetCount) + " retweets"
+           
+            if let timestamp = self.tweet.formattedDateToStr {
+                self.timestampLabel.text = timestamp
+            }
             if let user = self.tweet.user {
                 self.inputUser(user)
             }

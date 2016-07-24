@@ -81,6 +81,54 @@ class TwitterClient: BDBOAuth1SessionManager {
 
     }
     
+    func postTweet(params: NSDictionary, success: (Tweet) -> (), failure: (NSError) -> ()) {
+//        let params: [String: AnyObject] = ["status": status, "in_reply_to_status_id": statusId]
+        
+        POST("1.1/statuses/update.json", parameters: params, progress: nil, success: { (task: NSURLSessionDataTask, response: AnyObject?) in
+            
+            if let tweetData = response as? NSDictionary {
+                let tweet = Tweet(dictionary: tweetData)
+                success(tweet)
+            }
+            
+        }) { (task: NSURLSessionDataTask?, error: NSError) in
+            failure(error)
+        }
+        
+    }
+    
+    func createFavorite(statusId: String, success: (Tweet) -> (), failure: (NSError) -> ()) {
+//        let params: [String: AnyObject] = ["id" : statusId]
+        let params = ["id" : statusId]
+        
+        POST("1.1/favorites/create.json", parameters: params, progress: nil, success: { (task: NSURLSessionDataTask, response: AnyObject?) in
+            
+            if let tweetData = response as? NSDictionary {
+                let tweet = Tweet(dictionary: tweetData)
+                success(tweet)
+            }
+            
+        }) { (task: NSURLSessionDataTask?, error: NSError) in
+            failure(error)
+        }
+    }
+    
+    func retweet(retweetId: String, success: (Tweet) -> (), failure: (NSError) -> ()) {
+        
+        let url = "1.1/statuses/retweet/\(retweetId).json"
+        
+        POST(url, parameters: nil, progress: nil, success: { (task: NSURLSessionDataTask,response: AnyObject?) in
+            
+            if let tweetData = response as? NSDictionary {
+                let tweet = Tweet(dictionary: tweetData)
+                success(tweet)
+            }
+        }) { (task: NSURLSessionDataTask?, error: NSError) in
+            failure(error)
+        }
+    }
+    
+    
     func logout() {
         User.currentUser = nil
         deauthorize()

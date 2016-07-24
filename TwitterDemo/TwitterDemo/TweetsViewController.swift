@@ -13,6 +13,7 @@ class TweetsViewController: UIViewController {
 
     var tweets:[Tweet]! = []
     let refreshControl = UIRefreshControl()
+    let detailsSegueName = "detailsSegue"
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -34,7 +35,6 @@ class TweetsViewController: UIViewController {
         }
         
         self.pullToRefresh()
-        tableView.delegate = self
         tableView.dataSource = self
         tableView.reloadData()
         self.loadTweets()
@@ -51,16 +51,20 @@ class TweetsViewController: UIViewController {
         TwitterClient.sharedInstance.logout()
         
     }
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == detailsSegueName {
+            let nextVC = segue.destinationViewController as! DetailsViewController
+            let selectedTweet = tweets[tableView.indexPathForSelectedRow!.row]
+            nextVC.tweet = selectedTweet
+        }
     }
-    */
-    
+  
     // pull to refresh method
     
     func pullToRefresh() {
@@ -97,10 +101,11 @@ class TweetsViewController: UIViewController {
     }
  }
 
-extension TweetsViewController: UITableViewDelegate, UITableViewDataSource {
+extension TweetsViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tweets.count
     }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TweetsCell", forIndexPath: indexPath) as! TweetsCell
         cell.tweet = self.tweets[indexPath.row]
@@ -108,3 +113,13 @@ extension TweetsViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 }
+
+//
+//extension TweetsViewController: UITableViewDelegate {
+//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        let selectedTweet = tweets[indexPath.row]
+//        let detailsVC = DetailsViewController.initFromStoryBoard()
+//        detailsVC.tweet = selectedTweet
+//        navigationController?.pushViewController(detailsVC, animated: true)
+//    }
+//}
