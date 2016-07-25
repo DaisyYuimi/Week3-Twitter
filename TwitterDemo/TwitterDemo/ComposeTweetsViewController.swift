@@ -8,8 +8,12 @@
 
 import UIKit
 
-class ComposeTweetsViewController: UIViewController  {
+protocol ComposeTweetsViewControllerDelegate:class {
+    func composeTweet(composer: ComposeTweetsViewController, updateTweet tweet: String)
+}
 
+class ComposeTweetsViewController: UIViewController  {
+    
     @IBOutlet weak var profileImageView: UIImageView!
     
     @IBOutlet weak var nameLabel: UILabel!
@@ -26,6 +30,8 @@ class ComposeTweetsViewController: UIViewController  {
     
     var replyToStatusId: String?
     var screenNameToReply: String?
+    
+    weak var delegate: ComposeTweetsViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +64,9 @@ class ComposeTweetsViewController: UIViewController  {
         }
         
         TwitterClient.sharedInstance.postTweet(params, success: { (tweet: Tweet) in
+            self.delegate?.composeTweet(self, updateTweet: self.tweetField.text)
             print("Update tweet successfully")
+            
             self.navigationController?.popViewControllerAnimated(true)
         }) { (error: NSError) in
             print(error.localizedDescription)
@@ -89,7 +97,6 @@ class ComposeTweetsViewController: UIViewController  {
             if let screenNameToReply = screenNameToReply {
                 tweetField.text = screenNameToReply
             }
-            
             navigationItem.rightBarButtonItem?.title = "Reply"
         }
     }

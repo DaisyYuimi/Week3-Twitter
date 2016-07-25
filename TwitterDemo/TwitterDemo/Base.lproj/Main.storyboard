@@ -90,7 +90,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Khu-2k-jhb">
-                                                    <rect key="frame" x="76" y="33.5" width="195" height="18"/>
+                                                    <rect key="frame" x="76" y="33.5" width="203" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -116,12 +116,12 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="srJ-vZ-CZC" firstAttribute="baseline" secondItem="ocj-RM-nYb" secondAttribute="baseline" id="1im-Ad-baa"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Khu-2k-jhb" secondAttribute="trailing" constant="8" id="898-Qy-srY"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Khu-2k-jhb" secondAttribute="trailing" id="898-Qy-srY"/>
                                                 <constraint firstItem="srJ-vZ-CZC" firstAttribute="leading" secondItem="ocj-RM-nYb" secondAttribute="trailing" constant="10" id="B9f-gg-We6"/>
                                                 <constraint firstItem="PpF-dU-DWM" firstAttribute="top" secondItem="u31-Bm-xI9" secondAttribute="bottom" constant="8" id="Dfd-Im-gmb"/>
                                                 <constraint firstItem="Khu-2k-jhb" firstAttribute="top" secondItem="ocj-RM-nYb" secondAttribute="bottom" constant="5" id="JFe-U7-R1h"/>
                                                 <constraint firstItem="ocj-RM-nYb" firstAttribute="leading" secondItem="VUD-HY-hVv" secondAttribute="trailing" constant="8" id="MOV-nY-DpV"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="srJ-vZ-CZC" secondAttribute="trailing" constant="5" id="V3z-Gp-vwy"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="srJ-vZ-CZC" secondAttribute="trailing" id="V3z-Gp-vwy"/>
                                                 <constraint firstItem="qlE-vW-UNv" firstAttribute="leading" secondItem="u31-Bm-xI9" secondAttribute="trailing" constant="10" id="VmR-Ys-5lY"/>
                                                 <constraint firstItem="Khu-2k-jhb" firstAttribute="leading" secondItem="ocj-RM-nYb" secondAttribute="leading" id="WFl-le-iNv"/>
                                                 <constraint firstItem="u31-Bm-xI9" firstAttribute="leading" secondItem="ocj-RM-nYb" secondAttribute="leading" id="ZKj-I2-ya1"/>
@@ -159,7 +159,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="compose" id="Uik-Di-NcD">
                             <connections>
-                                <segue destination="MEQ-cj-ooq" kind="push" id="xc4-uo-4fr"/>
+                                <segue destination="MEQ-cj-ooq" kind="push" identifier="composeSegue" id="xc4-uo-4fr"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -194,7 +194,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zIk-yh-L82">
                                 <rect key="frame" x="90" y="92" width="47" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Screen name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8C6-Kz-VHq">
@@ -206,7 +206,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tweet field" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DR5-gx-d6f">
                                 <rect key="frame" x="10" y="167" width="302" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timestamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaw-IC-qb2">
@@ -387,7 +387,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h89-sG-9Dg">
                                 <rect key="frame" x="93" y="79" width="47" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LsM-wz-aiV">
@@ -479,6 +479,6 @@
         <image name="retweet-action" width="37" height="36"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hgV-3P-NiP"/>
+        <segue reference="xc4-uo-4fr"/>
     </inferredMetricsTieBreakers>
 </document>

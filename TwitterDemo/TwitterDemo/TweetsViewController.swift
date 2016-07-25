@@ -14,6 +14,7 @@ class TweetsViewController: UIViewController {
     var tweets:[Tweet]! = []
     let refreshControl = UIRefreshControl()
     let detailsSegueName = "detailsSegue"
+    let composeSegueName = "composeSegue"
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -62,6 +63,9 @@ class TweetsViewController: UIViewController {
             let nextVC = segue.destinationViewController as! DetailsViewController
             let selectedTweet = tweets[tableView.indexPathForSelectedRow!.row]
             nextVC.tweet = selectedTweet
+        } else if segue.identifier == composeSegueName {
+            let nextVC = segue.destinationViewController as! ComposeTweetsViewController
+            nextVC.delegate = self
         }
     }
   
@@ -111,6 +115,13 @@ extension TweetsViewController: UITableViewDataSource {
         cell.tweet = self.tweets[indexPath.row]
 
         return cell
+    }
+}
+
+extension TweetsViewController: ComposeTweetsViewControllerDelegate {
+    func composeTweet(composer: ComposeTweetsViewController, updateTweet tweet: String) {
+        print("updated tweets")
+        self.loadTweets()
     }
 }
 
