@@ -254,7 +254,7 @@
                                     <constraint firstAttribute="width" constant="30" id="RXM-B9-djB"/>
                                     <constraint firstAttribute="height" constant="30" id="UBO-BV-Yfu"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="reply-action_0"/>
+                                <state key="normal" image="reply-action_0"/>
                                 <connections>
                                     <action selector="onReplyAction:" destination="0Xk-hZ-1QF" eventType="touchUpInside" id="6pa-4L-gGw"/>
                                     <segue destination="MEQ-cj-ooq" kind="push" identifier="composeSegue" id="hgV-3P-NiP"/>
@@ -262,7 +262,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8hQ-kC-OnS" userLabel="like button">
                                 <rect key="frame" x="210" y="251" width="30" height="30"/>
-                                <state key="normal" title="Button" image="like-action"/>
+                                <state key="normal" image="like-action"/>
                                 <connections>
                                     <action selector="onFavoriteAction:" destination="0Xk-hZ-1QF" eventType="touchUpInside" id="7M0-Mn-Lru"/>
                                 </connections>
@@ -295,7 +295,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wtb-Ak-reO" userLabel="retweet button">
                                 <rect key="frame" x="110" y="251" width="30" height="30"/>
-                                <state key="normal" title="Button" image="retweet-action"/>
+                                <state key="normal" image="retweet-action"/>
                                 <connections>
                                     <action selector="onRetweetAction:" destination="0Xk-hZ-1QF" eventType="touchUpInside" id="YV4-9U-ulQ"/>
                                 </connections>
