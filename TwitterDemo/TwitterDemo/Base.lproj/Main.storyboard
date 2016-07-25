@@ -19,15 +19,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AiA-bn-vwy">
-                                <rect key="frame" x="50" y="234" width="220" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AiA-bn-vwy">
+                                <rect key="frame" x="50.5" y="234" width="220" height="100"/>
                                 <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="AiA-bn-vwy" secondAttribute="height" multiplier="11:5" id="NAD-ht-Rkn"/>
                                     <constraint firstAttribute="width" constant="220" id="reP-dv-d3P"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <state key="normal" title="Login with Twitter">
+                                <state key="normal" title="Log in with Twitter">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -59,7 +59,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="123" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="byb-oX-RtC">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="123" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="byb-oX-RtC">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -150,6 +150,12 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="byb-oX-RtC" firstAttribute="top" secondItem="eEv-rv-NUg" secondAttribute="top" id="3kj-jo-3xt"/>
+                            <constraint firstItem="byb-oX-RtC" firstAttribute="leading" secondItem="eEv-rv-NUg" secondAttribute="leading" id="EdK-5i-oKf"/>
+                            <constraint firstItem="97C-UG-hNC" firstAttribute="top" secondItem="byb-oX-RtC" secondAttribute="bottom" id="v4G-iq-dAN"/>
+                            <constraint firstAttribute="trailing" secondItem="byb-oX-RtC" secondAttribute="trailing" id="ydg-rt-fay"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="GPJ-XQ-iGC">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="2c4-so-hwd">
@@ -479,6 +485,6 @@
         <image name="retweet-action" width="37" height="36"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xc4-uo-4fr"/>
+        <segue reference="hgV-3P-NiP"/>
     </inferredMetricsTieBreakers>
 </document>

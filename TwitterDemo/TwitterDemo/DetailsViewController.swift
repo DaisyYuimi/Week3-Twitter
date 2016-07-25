@@ -64,7 +64,12 @@ class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.rightBarButtonItem?.title = ""
+        
         bindingValuesToView()
+        
+        profileImageView.layer.masksToBounds = true
+        profileImageView.layer.cornerRadius = 5
         
         heightSomeoneTweeted.constant = 0 
         
